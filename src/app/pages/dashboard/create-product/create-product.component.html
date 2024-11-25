@@ -1,0 +1,39 @@
+<div class="container pt-5">
+  <div class="row">
+     <div class="col-4">
+         <form [formGroup]="form">
+             <div class="row">
+                 <div class="col-12">
+                     <div class="mb-3">
+                         <label for="name" class="form-label">name</label>
+                         <input type="text" class="form-control" id="name" placeholder="Junaid" formControlName="name" >
+                         <div
+                             class="text-danger"
+                             *ngIf="name.touched && name.errors" >
+                             Invalid Name
+                         </div>
+                     </div>
+                 </div>
+                 <div class="mb-3">
+                     <label for="description" class="form-label">Description</label>
+                     <input type="text" class="form-control" id="description" placeholder="Essesntial Product" formControlName="description">
+                     <div
+                             class="text-danger"
+                             *ngIf="description.touched && description.errors" >
+                             Invalid Name
+                         </div>
+                 </div>
+                 <div class="mb-3">
+                     <label for="price" class="form-label">Price (in ₹)</label>
+                     <input type="number" class="form-control" id="price" placeholder="123" formControlName="price">
+                     <div
+                             class="text-danger"
+                             *ngIf="price.touched && price.errors" >
+                             Invalid Name
+                         </div>
+                 </div>
+             </div>
+         </form>
+     </div>
+ </div>
+<button (click)="submit()">submit</button>

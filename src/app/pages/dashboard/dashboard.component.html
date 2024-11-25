@@ -1,0 +1,23 @@
+<h3>DATA TABLE</h3>
+<table class="content-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th></th>
+        <th><button class="btn btn-warning" routerLink="/dashboard/create-product">Create</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <th><button class="btn btn-secondary" [routerLink]="'/edit-products/'+product.id">Edit</button></th>
+        <th><button (click)="delData(product.id)" class="btn btn-dark">Delete</button></th>
+      </tr>
+    </tbody>
+  </table>
